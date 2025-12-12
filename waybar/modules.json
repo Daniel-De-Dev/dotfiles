@@ -1,0 +1,112 @@
+{
+    // --- Workspaces ---
+    "hyprland/workspaces": {
+        "on-click": "activate",
+        "active-only": false,
+        "all-outputs": true,
+        "format": "{icon}",
+        "format-icons": {
+            "active": "",
+            "default": ""
+        },
+        "persistent-workspaces": {
+            "*": 5
+        }
+    },
+
+    // --- Window Title ---
+    "hyprland/window": {
+        "max-length": 50,
+        "separate-outputs": true
+    },
+
+    // --- Hardware Group ---
+    "group/hardware": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "not-memory",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "custom/system",
+            "disk",
+            "cpu",
+            "memory"
+        ]
+    },
+    "custom/system": {
+        "format": "",
+        "tooltip": false
+    },
+    "cpu": {
+        "format": "{usage}% ",
+        "on-click": "kitty -e htop"
+    },
+    "memory": {
+        "format": "{}% ",
+        "on-click": "kitty -e htop"
+    },
+    "disk": {
+        "format": "{percentage_used}% ",
+        "on-click": "kitty -e htop"
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": " Muted",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "network": {
+        "format-wifi": "  {signalStrength}%",
+        "format-ethernet": "  Connected",
+        "format-disconnected": "⚠ Disconnected",
+        "tooltip-format": "{ifname}: {ipaddr}",
+        "on-click": "nm-connection-editor"
+    },
+    "bluetooth": {
+        "format": " {status}",
+        "format-disabled": "", 
+        "format-off": "",
+        "on-click": "blueman-manager"
+    },
+    "battery": {
+        "states": { "warning": 30, "critical": 15 },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "clock": {
+        "format": "{:%H:%M  %a %d}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
+
+    "custom/appmenu": {
+        "format": "Apps",
+        "on-click": "rofi -show drun -replace",
+        "tooltip": false
+    },
+    "custom/filemanager": {
+        "format": "",
+        "on-click": "nautilus",
+        "tooltip": false
+    },
+    "custom/browser": {
+        "format": "",
+        "on-click": "brave",
+        "tooltip": false
+    },
+    "custom/exit": {
+        "format": "",
+        "on-click": "wlogout",
+        "tooltip": false
+    }
+}

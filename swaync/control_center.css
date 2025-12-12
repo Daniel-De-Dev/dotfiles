@@ -1,0 +1,157 @@
+/* Import Matugen generated colors */
+@import 'colors.css';
+
+/* === Derived dynamic colors === */
+@define-color base alpha(@surface, 0.7);
+@define-color surface_custom alpha(@surface_container, 0.5);
+@define-color hovercolor alpha(@surface_container_high, 0.5);
+@define-color activecolor @primary_container;
+
+@define-color buttoncolor alpha(@surface_container_high, 0.3);
+@define-color hoverbutton alpha(@surface_container_highest, 0.5);
+@define-color activebutton @primary;
+
+@define-color bordercolor alpha(@outline, 0.3);
+@define-color fontcolor @on_surface;
+@define-color text @on_surface;
+
+/* === Global Reset === */
+* {
+  color: @text;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: "Fira Sans", "Font Awesome 6 Free", "Font Awesome 6 Brands", sans-serif;
+  transition: 200ms ease;
+}
+
+/* === Control Center Container === */
+.control-center {
+  background: @base;
+  border-radius: 12px;
+  border: 1px solid @bordercolor;
+  box-shadow: 0 4px 12px @shadow;
+  padding: 12px;
+}
+
+/* === Buttons grid === */
+.widget-buttons-grid {
+  background: @surface_custom;
+  margin: 12px 0;
+  padding: 8px;
+  border-radius: 12px;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button {
+  background: @buttoncolor;
+  color: @text;
+  border-radius: 12px;
+  margin: 4px;
+  padding: 12px;
+  font-size: 1.25rem;
+  border: none;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button:hover {
+  background: @hoverbutton;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked {
+  background: @activebutton;
+  color: @on_primary;
+}
+
+/* === Brightness & Volume === */
+.widget-backlight,
+.widget-volume {
+  background: @surface_custom;
+  border-radius: 12px;
+  margin: 6px 0;
+  padding: 6px 12px;
+}
+
+.widget-backlight trough,
+.widget-volume trough {
+  background: @surface_container_highest;
+  border-radius: 12px;
+  min-height: 8px;
+}
+
+.widget-backlight trough highlight,
+.widget-volume trough highlight {
+  background: @primary;
+  border-radius: 12px;
+}
+
+/* === Music Player === */
+.widget-mpris {
+  background: @surface_custom;
+  border-radius: 12px;
+  margin: 12px 0;
+  padding: 12px;
+  color: @text;
+}
+
+.widget-mpris button {
+  color: @text;
+  background: transparent;
+  border-radius: 50%;
+  padding: 8px;
+}
+
+.widget-mpris button:hover {
+  background: @hovercolor;
+}
+
+.widget-mpris-album-art {
+  border-radius: 8px;
+  box-shadow: 0 2px 5px @shadow;
+}
+
+.widget-mpris-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.widget-mpris-subtitle {
+  font-size: 0.9rem;
+  color: @on_surface_variant;
+}
+
+/* === Title & DND === */
+.widget-title {
+  color: @primary;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.widget-title button {
+  background: @buttoncolor;
+  color: @text;
+  border-radius: 8px;
+  padding: 4px 12px;
+  font-weight: 600;
+  border: none;
+}
+
+.widget-title button:hover {
+  background: @hoverbutton;
+}
+
+.widget-dnd {
+  margin: 8px 0;
+}
+
+.widget-dnd > switch {
+  background: @buttoncolor;
+  border-radius: 12px;
+}
+
+.widget-dnd > switch:checked {
+  background: @primary;
+}
+
+.widget-dnd > switch slider {
+  background: @on_primary;
+  border-radius: 50%;
+  margin: 2px;
+}

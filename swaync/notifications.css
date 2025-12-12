@@ -1,0 +1,77 @@
+@import 'colors.css';
+
+@define-color base alpha(@surface, 0.8);
+@define-color bordercolor alpha(@outline, 0.3);
+@define-color text @on_surface;
+
+* {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 500;
+}
+
+.notification-row {
+  outline: none;
+}
+
+.notification-row .notification-background .notification {
+  background: @base;
+  border-radius: 12px;
+  border: 1px solid @bordercolor;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  margin: 6px 12px;
+  padding: 6px;
+}
+
+.notification-row .notification-background .notification.critical {
+  background: @base;
+  border: 1px solid @error;
+  box-shadow: 0 4px 8px alpha(@error, 0.2);
+}
+
+.notification-content {
+  margin: 8px;
+}
+
+.summary {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: @primary;
+}
+
+.body {
+  font-size: 1rem;
+  color: @on_surface_variant;
+}
+
+.time {
+  font-size: 0.8rem;
+  color: @on_surface_variant;
+  margin-right: 8px;
+}
+
+/* Actions/Buttons inside notification */
+.notification-action {
+  background: @surface_container;
+  color: @text;
+  border: 1px solid @bordercolor;
+  border-radius: 8px;
+  padding: 4px 12px;
+  margin-top: 8px;
+}
+
+.notification-action:hover {
+  background: @surface_container_high;
+}
+
+.close-button {
+  background: transparent;
+  color: @on_surface_variant;
+  border-radius: 50%;
+  padding: 4px;
+  margin: 4px;
+}
+
+.close-button:hover {
+  background: @surface_container_highest;
+  color: @error;
+}
