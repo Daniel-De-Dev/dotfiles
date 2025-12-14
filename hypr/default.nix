@@ -17,6 +17,7 @@
     polkit_gnome
     wtype
     hyprpicker
+    wdisplays
 
     # Audio & Media
     wireplumber
@@ -59,6 +60,7 @@
     kbLayout = config.my.host.keyMap;
     cursorTheme = "OpenZone_Black";
     cursorSize = "24";
+    monitorConfig = "monitor=,preferred,auto,1";
     polkitAgent = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
     DEFAULT_AUDIO_SINK = "@DEFAULT_AUDIO_SINK@";
     DEFAULT_SINK = "@DEFAULT_SINK@";
