@@ -65,6 +65,9 @@
     DEFAULT_AUDIO_SINK = "@DEFAULT_AUDIO_SINK@";
     DEFAULT_SINK = "@DEFAULT_SINK@";
     DEFAULT_SOURCE = "@DEFAULT_SOURCE@";
+    SUSPEND_CMD = if config.my.host.hardware.hibernation.enable
+      then "systemctl suspend-then-hibernate"
+    else "systemctl suspend";
   };
 
   assertions = [
