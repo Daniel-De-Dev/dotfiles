@@ -68,6 +68,13 @@
     SUSPEND_CMD = if config.my.host.hardware.hibernation.enable
       then "systemctl suspend-then-hibernate"
     else "systemctl suspend";
+    clamshellConfig =
+    if config.my.host.hardware.internalMonitor != null then ''
+      bindl = , switch:on:Lid Switch, exec, hyprctl keyword monitor "${config.my.host.hardware.internalMonitor}, disable"
+      bindl = , switch:off:Lid Switch, exec, hyprctl keyword monitor "${config.my.host.hardware.internalMonitor}, preferred, auto, 1"
+    ''
+    else
+      "";
   };
 
   assertions = [
