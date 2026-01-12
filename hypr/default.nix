@@ -47,6 +47,7 @@
     qalculate-qt
     bemoji
     yazi
+    protonvpn-gui
 
     # System Dependencies
     brightnessctl
