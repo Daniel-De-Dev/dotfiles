@@ -18,6 +18,7 @@
     wtype
     hyprpicker
     wdisplays
+    imagemagick
 
     # Audio & Media
     wireplumber
