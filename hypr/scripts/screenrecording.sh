@@ -56,16 +56,16 @@ if [[ "$1" == "--area" ]]; then
     # Exit if selection cancelled
     [[ -z "$AREA" ]] && exit 0
 
-    wf-recorder --audio=@DEFAULT_SINK@ -x yuv420p -g "$AREA" -f "$FILE" & 
+    wf-recorder --audio=@DEFAULT_SINK@.monitor -x yuv420p -g "$AREA" -f "$FILE" & 
 else
     # Auto-detect monitor
     MONITOR=$(get_active_monitor)
 
     if [[ -n "$MONITOR" ]]; then
-        wf-recorder --audio=@DEFAULT_SINK@ -x yuv420p -o "$MONITOR" -f "$FILE" &
+        wf-recorder --audio=@DEFAULT_SINK@.monitor -x yuv420p -o "$MONITOR" -f "$FILE" &
     else
         # fallback: let wf-recorder decide (might default to first output)
-        wf-recorder --audio=@DEFAULT_SINK@ -x yuv420p -f "$FILE" &
+        wf-recorder --audio=@DEFAULT_SINK@.monitor -x yuv420p -f "$FILE" &
     fi
 fi
 
